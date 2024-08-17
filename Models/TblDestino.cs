@@ -20,13 +20,7 @@ public partial class TblDestino
 
     public bool Estado { get; set; }
 
-    [JsonIgnore]
-    public virtual ICollection<TblCotizacion>? TblCotizacions { get; set; } = new List<TblCotizacion>();
 
     [JsonIgnore]
-    public virtual ICollection<TblItinerario>? TblItinerarios { get; set; } = new List<TblItinerario>();
-
-    [JsonIgnore]
-    public virtual ICollection<TblSalidaDestino>? TblSalidaDestinos { get; set; } = new List<TblSalidaDestino>();
-
+    public virtual ICollection<TblDestinoPaquete>? TblDestinoPaquetes { get; set; } = new List<TblDestinoPaquete>();
 }

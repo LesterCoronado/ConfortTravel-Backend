@@ -9,11 +9,11 @@ public partial class TblOrdenDePago
 
     public int IdCotizacion { get; set; }
 
-    public string? Descripcion { get; set; }
-
     public DateTime FechaGenerado { get; set; }
 
     public DateTime FechaVencimiento { get; set; }
+
+    public string Checkout { get; set; } = null!;
 
     public bool Estado { get; set; }
 

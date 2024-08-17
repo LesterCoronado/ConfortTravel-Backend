@@ -10,35 +10,28 @@ public partial class TblCotizacion
 
     public int IdUsuario { get; set; }
 
-    public int IdDestino { get; set; }
-
-    public int IdSalidaDestino { get; set; }
+    public int IdPaqueteViaje { get; set; }
 
     public DateTime FechaSalida { get; set; }
-
-    public DateTime FechaRetorno { get; set; }
-
-    public int? TotalDias { get; set; }
 
     public int TotalAdultos { get; set; }
 
     public int TotalNinos { get; set; }
 
+    public string? Comentario { get; set; }
+
     public double? PrecioCotizacion { get; set; }
 
-    public DateTime? ValidoHasta { get; set; }
+    public DateTime ValidoHasta { get; set; }
 
     public bool Estado { get; set; }
 
     [JsonIgnore]
-    public virtual TblDestino? IdDestinoNavigation { get; set; } = null!;
+    public virtual TblPaqueteViaje? IdPaqueteViajeNavigation { get; set; } = null!;
 
     [JsonIgnore]
     public virtual TblUsuario? IdUsuarioNavigation { get; set; } = null!;
 
     [JsonIgnore]
-    public virtual TblSalidaDestino? IdSalidaDestinoNavigation { get; set; } = null!;
-
-    [JsonIgnore]
-    public virtual ICollection<TblOrdenDePago> TblOrdenDePagos { get; set; } = new List<TblOrdenDePago>();
+    public virtual ICollection<TblOrdenDePago>? TblOrdenDePagos { get; set; } = new List<TblOrdenDePago>();
 }

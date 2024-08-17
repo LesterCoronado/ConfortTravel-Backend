@@ -19,5 +19,5 @@ public partial class TblHotel
 
     public bool Estado { get; set; }
 
-    public virtual ICollection<TblItinerarioHotel> TblItinerarioHotels { get; set; } = new List<TblItinerarioHotel>();
+    public virtual ICollection<TblReservaAlojamiento> TblReservaAlojamientos { get; set; } = new List<TblReservaAlojamiento>();
 }

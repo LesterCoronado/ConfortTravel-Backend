@@ -19,5 +19,5 @@ public partial class TblVehiculo
 
     public bool Estado { get; set; }
 
-    public virtual ICollection<TblItinerario> TblItinerarios { get; set; } = new List<TblItinerario>();
+    public virtual ICollection<TblReserva> TblReservas { get; set; } = new List<TblReserva>();
 }

@@ -1,7 +1,9 @@
-﻿using BackendConfortTravel.DTO;
-using BackendConfortTravel.Models;
+﻿using BackendConfortTravel.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using BackendConfortTravel.DTO;
+using BackendConfortTravel.Seguridad;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,9 +14,9 @@ namespace BackendConfort.Controllers
     public class LoginController : ControllerBase
     {
 
-        private readonly ConfortContext context;
+        private readonly ConfortTravelContext context;
 
-        public LoginController(ConfortContext context)
+        public LoginController(ConfortTravelContext context)
         {
             this.context = context;
         }
@@ -23,13 +25,14 @@ namespace BackendConfort.Controllers
         [HttpGet]
         public IActionResult Get(string email, string password)
         {
+            string _password = Encrypt.GetSHA256(password);
             try
             {
                 var usuario = this.context.TblAsignarRols
                 .Include(i => i.IdUsuarioNavigation.IdPersonaNavigation)
                 .Include(i => i.IdRolNavigation)
                 .Where(i => i.IdUsuarioNavigation.IdPersonaNavigation.Correo == email
-                 && i.IdUsuarioNavigation.Contraseña == password
+                 && i.IdUsuarioNavigation.Contraseña == _password
                 )
                 .Select(
                 i =>
@@ -72,7 +75,7 @@ namespace BackendConfort.Controllers
             return "value";
         }
 
-       
+
         // POST api/<LoginController>
         [HttpPost]
         public ActionResult Post([FromBody] UsuarioDTO usuarioDTO)
@@ -81,7 +84,7 @@ namespace BackendConfort.Controllers
             {
                 // Verificar si el correo ya existe en la tabla TblPersona
                 bool correoExiste = context.TblPersonas.Any(data => data.Correo == usuarioDTO.Correo);
-                
+
                 if (correoExiste)
                 {
                     return new BadRequestObjectResult("El usuario ya existe");
@@ -92,7 +95,7 @@ namespace BackendConfort.Controllers
 
                 // Incrementar el ID para el nuevo registro
                 int nuevoId = maxId.HasValue ? maxId.Value + 1 : 1;
-               
+
 
                 TblPersona persona = new TblPersona
                 {
@@ -120,7 +123,7 @@ namespace BackendConfort.Controllers
                 {
                     IdUsuario = idUsuario,
                     IdPersona = persona.IdPersona,
-                    Contraseña = usuarioDTO.Contraseña,
+                    Contraseña = Encrypt.GetSHA256(usuarioDTO.Contraseña),
                     Estado = true // Estado por defecto
                 };
 

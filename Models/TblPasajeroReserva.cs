@@ -3,17 +3,15 @@ using System.Collections.Generic;
 
 namespace BackendConfortTravel.Models;
 
-public partial class TblItinerarioPasajero
+public partial class TblPasajeroReserva
 {
-    public int IdPasajeroItinerario { get; set; }
+    public int IdPasajeroReserva { get; set; }
 
     public int IdPersona { get; set; }
 
-    public int IdItinerario { get; set; }
+    public int IdReserva { get; set; }
 
     public bool Estado { get; set; }
-
-    public virtual TblItinerario IdItinerarioNavigation { get; set; } = null!;
 
     public virtual TblPersona IdPersonaNavigation { get; set; } = null!;
 }

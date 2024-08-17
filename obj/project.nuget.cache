@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0mSYuvjud9TNGqayrlZxDG7n+c8aJ/r7NqKmrpGHgjuF5hMprV4P0E79g1TapBHk1jKGTs9HDRBk52QPPlp6sQ==",
+  "dgSpecHash": "BaDk3gtqnMTgoigxxqCF6l5v4zWCw7dNDB2nYHoW7i9etQ9GTig8QTvtVAnkDVeXf8aTu85dWqsIfsV1oMWjhA==",
   "success": true,
   "projectFilePath": "C:\\Users\\curacao\\source\\repos\\BackendConfortTravel\\BackendConfortTravel.csproj",
   "expectedPackageFiles": [
@@ -55,7 +55,7 @@
     "C:\\Users\\curacao\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\curacao\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\curacao\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
-    "C:\\Users\\curacao\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
+    "C:\\Users\\curacao\\.nuget\\packages\\system.data.sqlclient\\4.8.6\\system.data.sqlclient.4.8.6.nupkg.sha512",
     "C:\\Users\\curacao\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
     "C:\\Users\\curacao\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
     "C:\\Users\\curacao\\.nuget\\packages\\system.formats.asn1\\5.0.0\\system.formats.asn1.5.0.0.nupkg.sha512",

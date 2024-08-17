@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Configuration.AddJsonFile("appsettings.json");
 
-builder.Services.AddDbContext<ConfortContext>(options =>
+builder.Services.AddDbContext<ConfortTravelContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionStrings")));
 
 builder.Services.AddCors(options =>
@@ -24,6 +24,7 @@ builder.Services.AddCors(options =>
     });
 });
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,6 +35,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("Nueva Politica");
+
 
 app.UseHttpsRedirection();
 

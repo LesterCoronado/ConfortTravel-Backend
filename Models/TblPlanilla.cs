@@ -7,31 +7,27 @@ public partial class TblPlanilla
 {
     public int IdPlanilla { get; set; }
 
-    public int IdUsuario { get; set; }
-
-    public int Dpi { get; set; }
-
-    public DateTime? FechaNacimiento { get; set; }
-
-    public string EstadoCivil { get; set; } = null!;
+    public int IdEmpleado { get; set; }
 
     public DateTime FechaContratacion { get; set; }
 
-    public string TiempoDeContrato { get; set; } = null!;
+    public DateTime? FechaDeBaja { get; set; }
 
-    public int? IdCargo { get; set; }
+    public string TipoContrato { get; set; } = null!;
+
+    public int? TiempoContrato { get; set; }
+
+    public int IdCargo { get; set; }
 
     public double SalarioBase { get; set; }
 
-    public int? HorasTrabajadas { get; set; }
-
-    public double? TarifaPorHora { get; set; }
+    public int NoCuenta { get; set; }
 
     public bool Estado { get; set; }
 
-    public virtual TblCargoLaboral? IdCargoNavigation { get; set; }
+    public virtual TblCargoLaboral IdCargoNavigation { get; set; } = null!;
 
-    public virtual TblUsuario IdUsuarioNavigation { get; set; } = null!;
+    public virtual TblEmpleado IdEmpleadoNavigation { get; set; } = null!;
 
     public virtual ICollection<TblBonoPlanilla> TblBonoPlanillas { get; set; } = new List<TblBonoPlanilla>();
 

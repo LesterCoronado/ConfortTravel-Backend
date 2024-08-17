@@ -22,6 +22,4 @@ public partial class TblUsuario
     public virtual ICollection<TblCotizacion> TblCotizacions { get; set; } = new List<TblCotizacion>();
 
     public virtual ICollection<TblFel> TblFels { get; set; } = new List<TblFel>();
-
-    public virtual ICollection<TblPlanilla> TblPlanillas { get; set; } = new List<TblPlanilla>();
 }

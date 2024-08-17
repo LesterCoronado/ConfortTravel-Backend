@@ -12,21 +12,26 @@ public partial class TblPersona
 
     public string? Apellido { get; set; }
 
-    public int Edad { get; set; }
+    public int? Edad { get; set; }
 
     public string? Direccion { get; set; }
 
     public int? Telefono { get; set; }
 
-    public int Sexo { get; set; }
+    public int? Sexo { get; set; }
 
     public string? Correo { get; set; }
+
+    public string? Nacionalidad { get; set; }
+
+    public int? DpiCedula { get; set; }
 
     [JsonIgnore]
     public string? NombreCompleto => $"{Nombre} {Apellido}";
 
+    public virtual ICollection<TblEmpleado> TblEmpleados { get; set; } = new List<TblEmpleado>();
 
-    public virtual ICollection<TblItinerarioPasajero> TblItinerarioPasajeros { get; set; } = new List<TblItinerarioPasajero>();
+    public virtual ICollection<TblPasajeroReserva> TblPasajeroReservas { get; set; } = new List<TblPasajeroReserva>();
 
     public virtual ICollection<TblUsuario> TblUsuarios { get; set; } = new List<TblUsuario>();
 }

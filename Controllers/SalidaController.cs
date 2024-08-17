@@ -6,58 +6,60 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BackendConfortTravel.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
-    public class DestinoController : ControllerBase
+    public class SalidaController : ControllerBase
     {
+
         private readonly ConfortTravelContext context;
 
-        public DestinoController(ConfortTravelContext context)
+        public SalidaController(ConfortTravelContext context)
         {
             this.context = context;
         }
-
-        // GET: api/<Destinos>
+        // GET: api/<SalidaController>
         [HttpGet]
-        public IEnumerable<TblDestino> Get()
+        public IEnumerable<TblSalidum> Get()
         {
-            return context.TblDestinos.ToList();
+            return context.TblSalida.ToList();
         }
         [HttpGet("{id}")]
-        public ActionResult<TblDestino> Get(int id)
+        public ActionResult<TblSalidum> Get(int id)
         {
             try
             {
-                var destino = context.TblDestinos.Where(i => i.IdDestino == id).FirstOrDefault();
+                var destino = context.TblSalida.Where(i => i.IdSalida == id).FirstOrDefault();
                 return Ok(destino);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-            
-          
+
+
         }
 
 
-        // POST api/<Destinos>
+
+        // POST api/<SalidaController>
         [HttpPost]
-        public ActionResult Post([FromBody] TblDestino destino)
+        public ActionResult Post([FromBody] TblSalidum salida)
         {
             try
             {
                 // Verificar si el correo ya existe en la tabla TblPersona
-                bool Existe = context.TblDestinos.Any(p => p.Nombre == destino.Nombre);
+                bool Existe = context.TblSalida.Any(p => p.Direccion == salida.Direccion);
                 if (Existe)
                 {
-                    return new BadRequestObjectResult("El destino ya existe");
+                    return new BadRequestObjectResult("La salida ya existe");
                 }
-                int? maxId = context.TblDestinos.Max(p => (int?)p.IdDestino);
+                int? maxId = context.TblSalida.Max(p => (int?)p.IdSalida);
                 int nuevoId = maxId.HasValue ? maxId.Value + 1 : 1;
-                destino.IdDestino = nuevoId;
-                destino.Estado = true;
+                salida.IdSalida = nuevoId;
+               
 
-                context.TblDestinos.Add(destino);
+                context.TblSalida.Add(salida);
                 context.SaveChanges();
                 return Ok();
 
@@ -69,14 +71,15 @@ namespace BackendConfortTravel.Controllers
             }
         }
 
-        // PUT api/<Destinos>/5
+
+
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] TblDestino destino)
+        public ActionResult Put(int id, [FromBody] TblSalidum salida)
         {
-            if (destino.IdDestino == id)
+            if (salida.IdSalida == id)
             {
-                destino.Estado = true;
-                context.Entry(destino).State = EntityState.Modified;
+                
+                context.Entry(salida).State = EntityState.Modified;
                 context.SaveChanges();
                 return Ok();
             }
@@ -87,16 +90,16 @@ namespace BackendConfortTravel.Controllers
             }
         }
 
-        // DELETE api/<Destinos>/5
+        // DELETE api/<SalidaController>/5
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
             try
             {
-                var destino = context.TblDestinos.FirstOrDefault(data => data.IdDestino == id);
-                if (destino != null)
+                var salida = context.TblSalida.FirstOrDefault(data => data.IdSalida == id);
+                if (salida != null)
                 {
-                    context.TblDestinos.Remove(destino);
+                    context.TblSalida.Remove(salida);
                     context.SaveChanges();
                     return Ok();
                 }
@@ -111,5 +114,6 @@ namespace BackendConfortTravel.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
     }
 }
