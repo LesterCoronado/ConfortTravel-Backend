@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BackendConfortTravel.Models;
 
@@ -11,7 +12,8 @@ public partial class TblPaqueteNoIncluye
 
     public string NoIncluye { get; set; } = null!;
 
-    public string Estado { get; set; } = null!;
+    public bool Estado { get; set; }
 
-    public virtual TblPaqueteViaje IdPaqueteViajeNavigation { get; set; } = null!;
+    [JsonIgnore]
+    public virtual TblPaqueteViaje? IdPaqueteViajeNavigation { get; set; } = null!;
 }

@@ -43,11 +43,12 @@ public partial class TblPaqueteViaje
     [JsonIgnore]
     public virtual ICollection<TblPaqueteIncluye>? TblPaqueteIncluyes { get; set; } = new List<TblPaqueteIncluye>();
 
+    [JsonIgnore]
     public virtual ICollection<TblPaqueteItinerario>? TblPaqueteItinerarios { get; set; } = new List<TblPaqueteItinerario>();
 
     [JsonIgnore]
-    public virtual ICollection<TblPaqueteNoIncluye> TblPaqueteNoIncluyes { get; set; } = new List<TblPaqueteNoIncluye>();
+    public virtual ICollection<TblPaqueteNoIncluye>? TblPaqueteNoIncluyes { get; set; } = new List<TblPaqueteNoIncluye>();
 
     [JsonIgnore]
-    public virtual ICollection<TblReserva> TblReservas { get; set; } = new List<TblReserva>();
+    public virtual ICollection<TblReserva>? TblReservas { get; set; } = new List<TblReserva>();
 }

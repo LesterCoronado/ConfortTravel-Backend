@@ -25,6 +25,49 @@ namespace BackendConfortTravel.Controllers
             {
                 var Paquete = this.context.TblPaqueteViajes
                     .Include(i => i.IdSalidaNavigation)
+                    .Where(i => i.Estado == true)
+                    .Select(
+                    i =>
+                    new
+                    {
+                        idPaquete = i.IdPaqueteViaje,
+                        titulo = i.Titulo,
+                        portada = i.Portada,
+                        descripcion = i.Descripcion,
+                        modalidadPaquete = i.ModalidadPaquete,
+                        idSalida = i.IdSalida,
+                        salida = i.IdSalidaNavigation.Direccion,
+                        totalDias = i.TotalDias,
+                        totalNoches = i.TotalNoches,
+                        minPax = i.MinPax,
+                        maxPax = i.MaxPax,
+                        politicaCancelacion = i.PoliticaCancelacion,
+                        estado = i.Estado
+
+                    }
+
+                    ).ToList();
+
+                return Ok(Paquete);
+            }
+
+            catch (Exception ex)
+            {
+
+                {
+                    return StatusCode(500, "Ocurrió un error al procesar la solicitudd");
+                }
+
+            }
+        }
+
+        [HttpGet("admin")]
+        public IActionResult GetAdmin()
+        {
+            try
+            {
+                var Paquete = this.context.TblPaqueteViajes
+                    .Include(i => i.IdSalidaNavigation)
                     .Select(
                     i =>
                     new

@@ -53,6 +53,25 @@ namespace BackendConfortTravel.Controllers
             }
         }
 
+        [HttpGet("editar/{id}")]
+        public ActionResult GetByIdItinerario(int id)
+        {
+            try
+            {
+                var Incluye = this.context.TblPaqueteItinerarios
+                   .Where(i => i.IdPaqueteItinerario == id)
+                   .ToList();
+                return Ok(Incluye);
+            }
+            catch (Exception ex)
+            {
+                {
+                    return StatusCode(500, "Ocurrió un error al procesar la solicitudd");
+                }
+
+            }
+        }
+
 
         // GET api/<ItinerarioController>/5
         [HttpGet("{id}")]
@@ -100,11 +119,10 @@ namespace BackendConfortTravel.Controllers
         {
             try
             {
-                // Verificar si el correo ya existe en la tabla TblPersona
-                bool Existe = context.TblPaqueteItinerarios.Any(p => p.Actividad == itinerario.Actividad);
+                bool Existe = context.TblPaqueteItinerarios.Any(p => p.Actividad == itinerario.Actividad && p.IdPaqueteViaje == itinerario.IdPaqueteViaje);
                 if (Existe)
                 {
-                    return new BadRequestObjectResult("Ya se ha registrado una actividad con el mismo nombre");
+                    return new BadRequestObjectResult("actividad repetida");
                 }
                 int? maxId = context.TblPaqueteItinerarios.Max(p => (int?)p.IdPaqueteItinerario);
                 int nuevoId = maxId.HasValue ? maxId.Value + 1 : 1;
@@ -132,6 +150,7 @@ namespace BackendConfortTravel.Controllers
             {
                 if (itinerario.IdPaqueteItinerario == id)
                 {
+                    itinerario.Estado = true;
                     context.Entry(itinerario).State = EntityState.Modified;
                     context.SaveChanges();
                     return Ok();
