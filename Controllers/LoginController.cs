@@ -47,7 +47,7 @@ namespace BackendConfort.Controllers
 
                 if (usuario == null)
                 {
-                    return NotFound("Usuario no enccontrado");
+                    return NotFound("Usuario no encontrado");
 
                 }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BackendConfortTravel.Models;
 
@@ -19,5 +20,6 @@ public partial class TblHotel
 
     public bool Estado { get; set; }
 
-    public virtual ICollection<TblReservaAlojamiento> TblReservaAlojamientos { get; set; } = new List<TblReservaAlojamiento>();
+    [JsonIgnore]
+    public virtual ICollection<TblReservaAlojamiento>? TblReservaAlojamientos { get; set; } = new List<TblReservaAlojamiento>();
 }

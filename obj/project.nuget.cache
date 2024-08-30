@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BaDk3gtqnMTgoigxxqCF6l5v4zWCw7dNDB2nYHoW7i9etQ9GTig8QTvtVAnkDVeXf8aTu85dWqsIfsV1oMWjhA==",
+  "dgSpecHash": "juyMzDOIkpv5jo5TgBre7KAtZg4vMxCsPOvvfIxgLC1Yzg6JODS5gY/5xojPvPGnVnPTqJf3N+rGV4+fywGLAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\curacao\\source\\repos\\BackendConfortTravel\\BackendConfortTravel.csproj",
+  "projectFilePath": "C:\\Users\\curacao\\OneDrive\\Escritorio\\CARPETAS DE ESCRITORIO\\ConfortTravel-Backend\\BackendConfortTravel\\BackendConfortTravel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\curacao\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\curacao\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

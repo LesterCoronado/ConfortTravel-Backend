@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\curacao\\source\\repos\\BackendConfortTravel\\BackendConfortTravel.csproj": {}
+    "C:\\Users\\curacao\\OneDrive\\Escritorio\\CARPETAS DE ESCRITORIO\\ConfortTravel-Backend\\BackendConfortTravel\\BackendConfortTravel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\curacao\\source\\repos\\BackendConfortTravel\\BackendConfortTravel.csproj": {
+    "C:\\Users\\curacao\\OneDrive\\Escritorio\\CARPETAS DE ESCRITORIO\\ConfortTravel-Backend\\BackendConfortTravel\\BackendConfortTravel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\curacao\\source\\repos\\BackendConfortTravel\\BackendConfortTravel.csproj",
+        "projectUniqueName": "C:\\Users\\curacao\\OneDrive\\Escritorio\\CARPETAS DE ESCRITORIO\\ConfortTravel-Backend\\BackendConfortTravel\\BackendConfortTravel.csproj",
         "projectName": "BackendConfortTravel",
-        "projectPath": "C:\\Users\\curacao\\source\\repos\\BackendConfortTravel\\BackendConfortTravel.csproj",
+        "projectPath": "C:\\Users\\curacao\\OneDrive\\Escritorio\\CARPETAS DE ESCRITORIO\\ConfortTravel-Backend\\BackendConfortTravel\\BackendConfortTravel.csproj",
         "packagesPath": "C:\\Users\\curacao\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\curacao\\source\\repos\\BackendConfortTravel\\obj\\",
+        "outputPath": "C:\\Users\\curacao\\OneDrive\\Escritorio\\CARPETAS DE ESCRITORIO\\ConfortTravel-Backend\\BackendConfortTravel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\curacao\\AppData\\Roaming\\NuGet\\NuGet.Config",
