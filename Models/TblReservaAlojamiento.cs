@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BackendConfortTravel.Models;
 
@@ -13,13 +14,15 @@ public partial class TblReservaAlojamiento
 
     public DateTime FechaInicio { get; set; }
 
-    public DateTime? FechaFin { get; set; }
+    public DateTime FechaFin { get; set; }
 
-    public string TotalDias { get; set; } = null!;
+    public int? TotalDias { get; set; } 
 
     public bool Estado { get; set; }
 
-    public virtual TblHotel IdHotelNavigation { get; set; } = null!;
+    [JsonIgnore]
+    public virtual TblHotel? IdHotelNavigation { get; set; } = null!;
 
-    public virtual TblReserva IdReservaNavigation { get; set; } = null!;
+    [JsonIgnore]
+    public virtual TblReserva? IdReservaNavigation { get; set; } = null!;
 }

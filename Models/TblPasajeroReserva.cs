@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BackendConfortTravel.Models;
 
@@ -13,5 +14,6 @@ public partial class TblPasajeroReserva
 
     public bool Estado { get; set; }
 
-    public virtual TblPersona IdPersonaNavigation { get; set; } = null!;
+    [JsonIgnore]
+    public virtual TblPersona? IdPersonaNavigation { get; set; } = null!;
 }

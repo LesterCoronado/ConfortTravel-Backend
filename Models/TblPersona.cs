@@ -29,9 +29,12 @@ public partial class TblPersona
     [JsonIgnore]
     public string? NombreCompleto => $"{Nombre} {Apellido}";
 
-    public virtual ICollection<TblEmpleado> TblEmpleados { get; set; } = new List<TblEmpleado>();
+    [JsonIgnore]
+    public virtual ICollection<TblEmpleado>? TblEmpleados { get; set; } = new List<TblEmpleado>();
 
-    public virtual ICollection<TblPasajeroReserva> TblPasajeroReservas { get; set; } = new List<TblPasajeroReserva>();
+    [JsonIgnore]
+    public virtual ICollection<TblPasajeroReserva>? TblPasajeroReservas { get; set; } = new List<TblPasajeroReserva>();
 
-    public virtual ICollection<TblUsuario> TblUsuarios { get; set; } = new List<TblUsuario>();
+    [JsonIgnore]
+    public virtual ICollection<TblUsuario>? TblUsuarios { get; set; } = new List<TblUsuario>();
 }

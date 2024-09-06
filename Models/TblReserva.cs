@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BackendConfortTravel.Models;
 
@@ -13,11 +14,11 @@ public partial class TblReserva
 
     public DateTime FechaSalida { get; set; }
 
-    public TimeSpan? HoraSalida { get; set; }
+    public String? HoraSalida { get; set; }
 
     public DateTime FechaRetorno { get; set; }
 
-    public TimeSpan? HoraRetorno { get; set; }
+    public String? HoraRetorno { get; set; }
 
     public int TotalDias { get; set; }
 
@@ -25,9 +26,13 @@ public partial class TblReserva
 
     public bool Estado { get; set; }
 
-    public virtual TblPaqueteViaje IdPaqueteViajeNavigation { get; set; } = null!;
+    [JsonIgnore]
 
+    public virtual TblPaqueteViaje? IdPaqueteViajeNavigation { get; set; } = null!;
+
+    [JsonIgnore]
     public virtual TblVehiculo? IdVehiculoNavigation { get; set; }
 
-    public virtual ICollection<TblReservaAlojamiento> TblReservaAlojamientos { get; set; } = new List<TblReservaAlojamiento>();
+    [JsonIgnore]
+    public virtual ICollection<TblReservaAlojamiento>? TblReservaAlojamientos { get; set; } = new List<TblReservaAlojamiento>();
 }
