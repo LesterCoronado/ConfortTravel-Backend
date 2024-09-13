@@ -150,6 +150,7 @@ namespace BackendConfortTravel.Controllers
             {
                 if (cotizacion.IdCotizacion == id)
                 {
+                    cotizacion.Estado = true;
                     context.Entry(cotizacion).State = EntityState.Modified;
                     context.SaveChanges();
                     return Ok();

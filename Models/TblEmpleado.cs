@@ -15,7 +15,7 @@ public partial class TblEmpleado
 
     public string FormacionAcademica { get; set; } = null!;
 
-    public string? TipoSangre { get; set; }
+    public int Dpi { get; set; }
 
     public int? Altura { get; set; }
 

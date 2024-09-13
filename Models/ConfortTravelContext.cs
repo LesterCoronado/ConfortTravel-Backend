@@ -359,10 +359,7 @@ public partial class ConfortTravelContext : DbContext
                 .HasColumnName("formacionAcademica");
             entity.Property(e => e.IdPersona).HasColumnName("idPersona");
             entity.Property(e => e.Peso).HasColumnName("peso");
-            entity.Property(e => e.TipoSangre)
-                .HasMaxLength(100)
-                .IsUnicode(false)
-                .HasColumnName("tipoSangre");
+            entity.Property(e => e.Dpi).HasColumnName("dpi");
 
             entity.HasOne(d => d.IdPersonaNavigation).WithMany(p => p.TblEmpleados)
                 .HasForeignKey(d => d.IdPersona)
