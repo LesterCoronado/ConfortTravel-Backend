@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BackendConfortTravel.Models;
 
@@ -25,13 +26,18 @@ public partial class TblPlanilla
 
     public bool Estado { get; set; }
 
-    public virtual TblCargoLaboral IdCargoNavigation { get; set; } = null!;
+    [JsonIgnore]
+    public virtual TblCargoLaboral? IdCargoNavigation { get; set; } = null!;
 
-    public virtual TblEmpleado IdEmpleadoNavigation { get; set; } = null!;
+    [JsonIgnore]
+    public virtual TblEmpleado? IdEmpleadoNavigation { get; set; } = null!;
 
-    public virtual ICollection<TblBonoPlanilla> TblBonoPlanillas { get; set; } = new List<TblBonoPlanilla>();
+    [JsonIgnore]
+    public virtual ICollection<TblBonoPlanilla>? TblBonoPlanillas { get; set; } = new List<TblBonoPlanilla>();
 
-    public virtual ICollection<TblDescuentoPlanilla> TblDescuentoPlanillas { get; set; } = new List<TblDescuentoPlanilla>();
+    [JsonIgnore]
+    public virtual ICollection<TblDescuentoPlanilla>? TblDescuentoPlanillas { get; set; } = new List<TblDescuentoPlanilla>();
 
-    public virtual ICollection<TblPagoPlanilla> TblPagoPlanillas { get; set; } = new List<TblPagoPlanilla>();
+    [JsonIgnore]
+    public virtual ICollection<TblPagoPlanilla>? TblPagoPlanillas { get; set; } = new List<TblPagoPlanilla>();
 }

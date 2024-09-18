@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BackendConfortTravel.Models;
 
@@ -15,7 +16,9 @@ public partial class TblCargoLaboral
 
     public bool Estado { get; set; }
 
-    public virtual TblDeptoTrabajo IdDeptoTrabajoNavigation { get; set; } = null!;
+    [JsonIgnore]
+    public virtual TblDeptoTrabajo? IdDeptoTrabajoNavigation { get; set; } = null!;
 
-    public virtual ICollection<TblPlanilla> TblPlanillas { get; set; } = new List<TblPlanilla>();
+    [JsonIgnore]
+    public virtual ICollection<TblPlanilla>? TblPlanillas { get; set; } = new List<TblPlanilla>();
 }
