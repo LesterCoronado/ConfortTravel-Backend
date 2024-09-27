@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BackendConfortTravel.Models;
 
@@ -13,11 +14,10 @@ public partial class TblDescuento
 
     public double Monto { get; set; }
 
-    public string? Moneda { get; set; }
-
     public string FrecuenciaDescuento { get; set; } = null!;
 
     public bool Estado { get; set; }
 
+    [JsonIgnore]
     public virtual TblDescuentoPlanilla? TblDescuentoPlanilla { get; set; }
 }

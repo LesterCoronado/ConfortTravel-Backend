@@ -119,9 +119,6 @@ public partial class ConfortTravelContext : DbContext
             entity.Property(e => e.FrecuenciaPago)
                 .HasMaxLength(50)
                 .HasColumnName("frecuenciaPago");
-            entity.Property(e => e.Moneda)
-                .HasMaxLength(50)
-                .HasColumnName("moneda");
             entity.Property(e => e.Monto).HasColumnName("monto");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
@@ -141,10 +138,11 @@ public partial class ConfortTravelContext : DbContext
             entity.Property(e => e.FechaAsignacion)
                 .HasColumnType("date")
                 .HasColumnName("fechaAsignacion");
+            entity.Property(e => e.IdBono).HasColumnName("idBono");
             entity.Property(e => e.IdPlanilla).HasColumnName("idPlanilla");
 
-            entity.HasOne(d => d.IdBonoPlanillaNavigation).WithOne(p => p.TblBonoPlanilla)
-                .HasForeignKey<TblBonoPlanilla>(d => d.IdBonoPlanilla)
+            entity.HasOne(d => d.IdBonoNavigation).WithOne(p => p.TblBonoPlanilla)
+                .HasForeignKey<TblBonoPlanilla>(d => d.IdBono)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_tbl_BonoPlanilla_tbl_Bono");
 
@@ -249,9 +247,6 @@ public partial class ConfortTravelContext : DbContext
             entity.Property(e => e.FrecuenciaDescuento)
                 .HasMaxLength(50)
                 .HasColumnName("frecuenciaDescuento");
-            entity.Property(e => e.Moneda)
-                .HasMaxLength(50)
-                .HasColumnName("moneda");
             entity.Property(e => e.Monto).HasColumnName("monto");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
@@ -260,17 +255,18 @@ public partial class ConfortTravelContext : DbContext
 
         modelBuilder.Entity<TblDescuentoPlanilla>(entity =>
         {
-            entity.HasKey(e => e.IdDescuento);
+            entity.HasKey(e => e.IdDescuentoPlanilla);
 
             entity.ToTable("tbl_DescuentoPlanilla");
 
-            entity.Property(e => e.IdDescuento)
+            entity.Property(e => e.IdDescuentoPlanilla)
                 .ValueGeneratedNever()
-                .HasColumnName("idDescuento");
+                .HasColumnName("idDescuentoPlanilla");
             entity.Property(e => e.Estado).HasColumnName("estado");
             entity.Property(e => e.FechaAsignacion)
                 .HasColumnType("date")
                 .HasColumnName("fechaAsignacion");
+            entity.Property(e => e.IdDescuento).HasColumnName("idDescuento");
             entity.Property(e => e.IdPlanilla).HasColumnName("idPlanilla");
 
             entity.HasOne(d => d.IdDescuentoNavigation).WithOne(p => p.TblDescuentoPlanilla)
