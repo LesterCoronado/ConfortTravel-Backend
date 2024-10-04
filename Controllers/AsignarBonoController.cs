@@ -47,7 +47,7 @@ namespace BackendConfortTravel.Controllers
                     Bono = i.IdBonoNavigation.Nombre,
                     Descripción = i.IdBonoNavigation.Descripcion,
                     Monto = i.IdBonoNavigation.Monto,
-                    FrecuenciaPago = i.IdBonoNavigation.FrecuenciaPago
+                    //FrecuenciaPago = i.IdBonoNavigation.FrecuenciaPago
 
                 })
                 .ToList();

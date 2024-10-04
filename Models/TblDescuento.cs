@@ -14,7 +14,7 @@ public partial class TblDescuento
 
     public double Monto { get; set; }
 
-    public string FrecuenciaDescuento { get; set; } = null!;
+    //public string FrecuenciaDescuento { get; set; } = null!;
 
     public bool Estado { get; set; }
 

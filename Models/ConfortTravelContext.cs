@@ -113,12 +113,12 @@ public partial class ConfortTravelContext : DbContext
                 .ValueGeneratedNever()
                 .HasColumnName("idBono");
             entity.Property(e => e.Descripcion)
-                .HasMaxLength(50)
+                .HasMaxLength(100)
                 .HasColumnName("descripcion");
             entity.Property(e => e.Estado).HasColumnName("estado");
-            entity.Property(e => e.FrecuenciaPago)
-                .HasMaxLength(50)
-                .HasColumnName("frecuenciaPago");
+            //entity.Property(e => e.FrecuenciaPago)
+            //    .HasMaxLength(50)
+            //    .HasColumnName("frecuenciaPago");
             entity.Property(e => e.Monto).HasColumnName("monto");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
@@ -244,9 +244,9 @@ public partial class ConfortTravelContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("descripcion");
             entity.Property(e => e.Estado).HasColumnName("estado");
-            entity.Property(e => e.FrecuenciaDescuento)
-                .HasMaxLength(50)
-                .HasColumnName("frecuenciaDescuento");
+            //entity.Property(e => e.FrecuenciaDescuento)
+            //    .HasMaxLength(100)
+            //    .HasColumnName("frecuenciaDescuento");
             entity.Property(e => e.Monto).HasColumnName("monto");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
@@ -687,6 +687,8 @@ public partial class ConfortTravelContext : DbContext
             entity.Property(e => e.IdCargo).HasColumnName("idCargo");
             entity.Property(e => e.IdEmpleado).HasColumnName("idEmpleado");
             entity.Property(e => e.NoCuenta).HasColumnName("noCuenta");
+            entity.Property(e => e.TipoCuenta).HasColumnName("tipoCuenta");
+            entity.Property(e => e.Moneda).HasColumnName("moneda");
             entity.Property(e => e.SalarioBase).HasColumnName("salarioBase");
             entity.Property(e => e.TiempoContrato).HasColumnName("tiempoContrato");
             entity.Property(e => e.TipoContrato)

@@ -39,6 +39,8 @@ namespace BackendConfortTravel.Controllers
           FechaDeBaja= p.FechaDeBaja,
           SalarioBase = p.SalarioBase,
           NoCuenta = p.NoCuenta,
+          TipoCuenta = p.TipoCuenta,
+          Moneda = p.Moneda,
           Estado = p.Estado
         })
         .ToList();
@@ -69,6 +71,8 @@ namespace BackendConfortTravel.Controllers
             FechaDeBaja = p.FechaDeBaja,
             SalarioBase = p.SalarioBase,
             NoCuenta = p.NoCuenta,
+            TipoCuenta = p.TipoCuenta,
+            Moneda = p.Moneda,
             Estado = p.Estado
         })
         .Where(i => i.IdPlanilla == id)

@@ -47,7 +47,7 @@ namespace BackendConfortTravel.Controllers
                     descuento = i.IdDescuentoNavigation.Nombre,
                     Descripción = i.IdDescuentoNavigation.Descripcion,
                     Monto = i.IdDescuentoNavigation.Monto,
-                    FrecuenciaDescuento = i.IdDescuentoNavigation.FrecuenciaDescuento
+                    //FrecuenciaDescuento = i.IdDescuentoNavigation.FrecuenciaDescuento
 
                 })
                 .ToList();

@@ -24,6 +24,10 @@ public partial class TblPlanilla
 
     public int NoCuenta { get; set; }
 
+    public string TipoCuenta { get; set; }
+
+    public string Moneda { get; set; }
+
     public bool Estado { get; set; }
 
     [JsonIgnore]
