@@ -388,7 +388,12 @@ public partial class ConfortTravelContext : DbContext
             entity.Property(e => e.Serie)
                 .HasMaxLength(50)
                 .HasColumnName("serie");
+            entity.Property(e => e.Dte)
+                .IsUnicode(false)
+                .HasColumnName("dte");
             entity.Property(e => e.Subtotal).HasColumnName("subtotal");
+
+
 
             entity.HasOne(d => d.IdImpuestoNavigation).WithMany(p => p.TblFels)
                 .HasForeignKey(d => d.IdImpuesto)
@@ -665,6 +670,7 @@ public partial class ConfortTravelContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("nombre");
             entity.Property(e => e.Sexo).HasColumnName("sexo");
+            entity.Property(e => e.Nit).HasColumnName("nit");
             entity.Property(e => e.Telefono).HasColumnName("telefono");
         });
 

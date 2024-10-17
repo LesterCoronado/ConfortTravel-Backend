@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BackendConfortTravel.Models;
 
@@ -17,7 +18,9 @@ public partial class TblOrdenDePago
 
     public bool Estado { get; set; }
 
-    public virtual TblCotizacion IdCotizacionNavigation { get; set; } = null!;
+    [JsonIgnore]
+    public virtual TblCotizacion? IdCotizacionNavigation { get; set; } = null!;
 
-    public virtual ICollection<TblFel> TblFels { get; set; } = new List<TblFel>();
+    [JsonIgnore]
+    public virtual ICollection<TblFel>? TblFels { get; set; } = new List<TblFel>();
 }

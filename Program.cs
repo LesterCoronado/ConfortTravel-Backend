@@ -1,3 +1,4 @@
+using BackendConfortTravel.Controllers;
 using BackendConfortTravel.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient();
+builder.Services.AddHttpClient<FELController>();
 builder.Configuration.AddJsonFile("appsettings.json");
 
 builder.Services.AddDbContext<ConfortTravelContext>(options =>
@@ -33,6 +36,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseAuthorization();
 
 app.UseCors("Nueva Politica");
 

@@ -21,7 +21,7 @@ namespace BackendConfortTravel.Controllers
             this.context = context;
         }
 
-        [HttpGet("export-csv")]
+        [HttpGet("export-csv")] 
         public async Task<IActionResult> ExportCsv([FromQuery] bool incluirBonos = false, [FromQuery] bool incluirDescuentos = false)
         {
             // Obtener la información de la base de datos y mapearla a la clase PlanillaPagoDto

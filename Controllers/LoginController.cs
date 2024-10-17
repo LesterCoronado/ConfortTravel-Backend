@@ -41,9 +41,11 @@ namespace BackendConfort.Controllers
                     idUsuario = i.IdUsuario,
                     nombre = i.IdUsuarioNavigation.IdPersonaNavigation.NombreCompleto,
                     rol = i.IdRolNavigation.NombreRol,
-                    idRol = i.IdRolNavigation.IdRol
+                    idRol = i.IdRolNavigation.IdRol,
+                    correo = i.IdUsuarioNavigation.IdPersonaNavigation.Correo
+
                 }
-                ).FirstOrDefault();
+                ).FirstOrDefault(); 
 
                 if (usuario == null)
                 {

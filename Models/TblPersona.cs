@@ -26,6 +26,8 @@ public partial class TblPersona
 
     public int? DpiCedula { get; set; }
 
+    public long? Nit { get; set; }
+
     [JsonIgnore]
     public string? NombreCompleto => $"{Nombre} {Apellido}";
 
