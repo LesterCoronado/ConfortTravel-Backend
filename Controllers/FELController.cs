@@ -19,7 +19,7 @@ namespace BackendConfortTravel.Controllers
         private readonly ConfortTravelContext context;
         private readonly HttpClient _httpClient;
         private string _authorizationToken; // Variable para almacenar el token dinámicamente
-        private const string TaxId = "000044653948";
+        private const string TaxId = "000112571913";
         private const string Data1 = "SHARED_GETINFONITcom";
 
         public FELController(ConfortTravelContext context, HttpClient httpClient)
@@ -32,11 +32,11 @@ namespace BackendConfortTravel.Controllers
         {
             try
             {
-                string url = "https://felgttestaws.digifact.com.gt/gt.com.apinuc/api/login/get_token";
+                string url = "https://felgtaws.digifact.com.gt/gt.com.apinuc/api/login/get_token";
                 var loginData = new
                 {
-                    Username = "GT.000044653948.abarrientos",
-                    Password = "VDt!64q!"
+                    Username = "GT.000112571913.joselin",
+                    Password = "K$_d3&4&"
                 };
 
                 string jsonContent = JsonSerializer.Serialize(loginData);
@@ -79,7 +79,7 @@ namespace BackendConfortTravel.Controllers
                     }
                 }
 
-                string url = $"https://felgttestaws.digifact.com.gt/gt.com.apinuc/api/Shared?TAXID={TaxId}&DATA1={Data1}&DATA2=NIT|{nit}&USERNAME=abarrientos";
+                string url = $"https://felgtaws.digifact.com.gt/gt.com.apinuc/api/Shared?TAXID={TaxId}&DATA1={Data1}&DATA2=NIT|{nit}&USERNAME=joselin";
 
                 HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, url);
                 request.Headers.Add("Authorization", _authorizationToken);
@@ -136,7 +136,7 @@ namespace BackendConfortTravel.Controllers
                     })
                     .FirstOrDefault(i => i.IdCotizacion == idCotizacion);
 
-                string url = $"https://felgttestaws.digifact.com.gt/gt.com.apinuc/api/v2/transform/nuc?TAXID={TaxId}&FORMAT=PDF|XML&USERNAME=abarrientos";
+                string url = $"https://felgtaws.digifact.com.gt/gt.com.apinuc/api/v2/transform/nuc?TAXID={TaxId}&FORMAT=PDF|XML&USERNAME=joselin";
                 // Construir el XML con la información dinámica
                 string xmlContent = 
                $@"<?xml version=""1.0"" encoding=""UTF-8""?>
@@ -149,7 +149,7 @@ namespace BackendConfortTravel.Controllers
                             <Currency>GTQ</Currency> <!-- DatosGenerales@CodigoMoneda  -->  
                         </Header>
                         <Seller>
-                            <TaxID>44653948</TaxID> <!-- Emisor@NITEmisor -->
+                            <TaxID>112571913</TaxID> <!-- Emisor@NITEmisor -->
                             <TaxIDAdditionalInfo>
                                 <Info Name=""AfiliacionIVA"" Value=""GEN""/> <!-- Emisor@AfiliacionIVA -->
                             </TaxIDAdditionalInfo>
