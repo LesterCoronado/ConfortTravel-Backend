@@ -3,6 +3,6 @@
   <PropertyGroup>
     <Controller_SelectedScaffolderID>MvcControllerWithActionsScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/MVC/Controller</Controller_SelectedScaffolderCategoryPath>
-    <NameOfLastUsedPublishProfile>C:\Users\curacao\OneDrive\Escritorio\CARPETAS DE ESCRITORIO\ConfortTravel-Backend\BackendConfortTravel\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\curacao\OneDrive\Escritorio\CARPETAS DE ESCRITORIO\ConfortTravel-Backend\BackendConfortTravel\.github\workflows\main_confortapp.yml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
