@@ -18,7 +18,7 @@ namespace BackendConfortTravel.Controllers
     {
         private readonly ConfortTravelContext context;
         private readonly HttpClient _httpClient;
-        private string _authorizationToken; // Variable para almacenar el token dinámicamente
+        private string _authorizationToken; // Variable para almacenar el token dinámicamentee
         private const string TaxId = "000112571913";
         private const string Data1 = "SHARED_GETINFONITcom";
 
