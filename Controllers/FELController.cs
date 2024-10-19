@@ -79,7 +79,7 @@ namespace BackendConfortTravel.Controllers
                     }
                 }
 
-                string url = $"https://felgtaws.digifact.com.gt/gt.com.apinuc/api/Shared?TAXID={TaxId}&DATA1={Data1}&DATA2=NIT|{nit}&USERNAME=joselin";
+                string url = $"https://felgtaws.digifact.com.gt/gt.com.apinuc/api/Shared?TAXID={TaxId}&DATA1={Data1}&DATA2=NIT|{nit}&USERNAME=joselin&COUNTRY=GT";
 
                 HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, url);
                 request.Headers.Add("Authorization", _authorizationToken);
